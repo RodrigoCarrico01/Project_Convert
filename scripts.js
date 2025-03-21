@@ -9,6 +9,7 @@ const amount = document.getElementById("amount")
 const currency = document.getElementById("currency")
 const footer = document.querySelector("main footer")
 const description = document.getElementById("description")
+const result = document.getElementById("result")
 
 //Manipular o input amount para receber somente números
 amount.addEventListener("input", ()=>{
@@ -43,6 +44,12 @@ function convertCurrency(amount, pricing, symbol){
     //Exibir a cotação da moeda selecionada
     description.textContent = `${symbol} 1 = ${formatCurrencyBRL(pricing)}`
 
+    // Calcula o total
+    let total = amount * pricing
+
+    // Exibe o resultado total.
+    result.textContent = total
+
     // Aplica a class que exibe o footer com o resultado
     footer.classList.add("show-result") 
   } catch(error) {
@@ -56,6 +63,7 @@ function convertCurrency(amount, pricing, symbol){
 
 //Formata a moeda em reais zuka
 function formatCurrencyBRL(value){
+  //converte para numero para utilizar o tolocalestring para formatar no padrão BRL(R$ 00,00).
   return Number(value).toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
