@@ -40,7 +40,8 @@ form.onsubmit = (event) => {
 // Função para converter a moeda.
 function convertCurrency(amount, pricing, symbol){
   try {
-    description.textContent = `${symbol} 1 = ${pricing}`
+    //Exibir a cotação da moeda selecionada
+    description.textContent = `${symbol} 1 = ${formatCurrencyBRL(pricing)}`
 
     // Aplica a class que exibe o footer com o resultado
     footer.classList.add("show-result") 
@@ -52,5 +53,14 @@ function convertCurrency(amount, pricing, symbol){
     alert("Não foi possível converter. Tente novamente mais tarde.")
   }
 } 
+
+//Formata a moeda em reais zuka
+function formatCurrencyBRL(value){
+  return Number(value).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  } )
+}
+
 
 
