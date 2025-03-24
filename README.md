@@ -24,7 +24,7 @@ Este projeto, desenvolvido em aula, faz parte da trilha Full-Stack, promovido pe
 ## Tecnologias
 
 - **HTML5** para estruturação do conteúdo
-- **CSS3** para estilização e responsividade 
+- **CSS3** para estilização 
 - **JavaScript** para executar funções e melhorar interatividade. 
 - **Google Fonts** para personalização da tipografia
 
